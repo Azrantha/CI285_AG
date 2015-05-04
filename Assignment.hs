@@ -29,8 +29,8 @@ output :: String
 output = "Current data: \n" ++ tempsToStr AccessJSON.readLocal ++ "\
  \ \nTo enter new data please navigate to /input/[your input URL] \n\
  \ For an example, try \
- \ http://localhost:8000/input/http://itsuite.it.brighton.ac.uk/ag343/input.json\
- \ You may also try input2, and input3, which will override some of the values \
+\http://localhost:8000/input/http://itsuite.it.brighton.ac.uk/ag343/input1.json\
+\ You may also try input2, and input3, which will override some of the values \
  \ of the other json files to demonstrate this program"
 	
 
@@ -59,7 +59,6 @@ formatURL :: String -> String
 formatURL (x:xs) = if (x=='\\') then '/':formatURL xs else x : (formatURL xs)
 formatURL (x)	= x
 --}
-
 
 -- hosted on localhost:8000
 -- sources used when creating project: 

@@ -15,14 +15,31 @@ This will copy the json data from input.json to local.json (the output/storage
 file for html), overwriting any data with the same username and timestamps.
 
 To run the server type:
-> 
+> ./Main
+
+To access the server go to localhost:8000/output in your prefered web browser.
+This will display the state of the local.json file when this page was first 
+accessed after the command ./Main was entered.
+
+Currently the Happstack server will 'cache' the first response to the directory
+/output. This means you will have to interupt (ctrl+c) the server (./Main) 
+and start it again to display the latest version of the file. I believe
+this is caused by the use of unsafeLocalState to allow the message to be
+displayed simply as a String.
+
+I have tried to make Happstack refresh the file data automatically when 
+the output page was accessed again using LiftIO, although I could not 
+find a way around the mis-matched types. I also tried using 
+happstack-plugins but several sub-packages could not be installed.
+Sorry for the inconvenience.
 
 To input json via a URL, host it at an accessible location with the
-following format:
+following format (if you view the output page you will see several samples):
 {"temperatures":[
 	{"user":"username", "date":"2015-02-28T20:16:12+00:00", "temperature":0},
 	{"user":"username", "date":"2015-01-01T21:46:55+00:00", "temperature":2}
 ]}
 
-
-# CI285_AG
+Each time you input json via LocalTest or the Happstack server, values that
+were previously stored in the file with the same username and time will 
+be overwritten, and other values will be appended to the end of the file.
