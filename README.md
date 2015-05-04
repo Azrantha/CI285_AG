@@ -43,3 +43,9 @@ following format (if you view the output page you will see several samples):
 Each time you input json via LocalTest or the Happstack server, values that
 were previously stored in the file with the same username and time will 
 be overwritten, and other values will be appended to the end of the file.
+
+sources used when creating project: 
+http://hackage.haskell.org/ -- various package directories
+https://www.fpcomplete.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/json
+http://happstack.com/docs/crashcourse/index.html#serving-files-from-a-directory
+http://stackoverflow.com/questions/6009384/exception-handling-in-haskell
