@@ -1,8 +1,8 @@
 # CI285_AG
 To create executable:
 Open terminal and cd to this directory then write the following commands
-> cabal build
--- If it says there are missing packages, install them and try again!
+> cabal build <br>
+-- If it says there are missing packages, install them and try again! <br>
 > cd dist/build/executables
 
 To input json locally, use the input.json file in the dist/build/Assignment
