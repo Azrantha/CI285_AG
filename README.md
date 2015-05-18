@@ -1,5 +1,6 @@
 # CI285_AG
-To create executable:
+
+To create executables:
 Open terminal and cd to this directory then write the following commands
 > cabal build <br>
 -- If it says there are missing packages, install them and try again! <br>
@@ -21,11 +22,9 @@ To access the server go to localhost:8000/output in your prefered web browser.
 This will display the state of the local.json file when this page was first 
 accessed after the command ./Main was entered.
 
-Currently the Happstack server will 'cache' the first response to the directory
-/output. This means you will have to interupt (ctrl+c) the server (./Main) 
-and start it again to display the latest version of the file. I believe
-this is caused by the use of unsafeLocalState to allow the message to be
-displayed simply as a String.
+Currently the Happstack server will 'cache' the first response to the directory /output. This means you will have to interupt (ctrl+c) the server (./Main) and start it again to display the latest version ofthe file.
+
+This is due to Happstack only taking pure functions, so it thinks it does not need to re-calculate the output. This could have been fixed by installing happstack-plugins to tell the server to lead pages dynamically however Cabal broke completely when trying to install the package. 
 
 I have tried to make Happstack refresh the file data automatically when 
 the output page was accessed again using LiftIO, although I could not 
