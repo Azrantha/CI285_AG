@@ -26,12 +26,6 @@ Currently the Happstack server will 'cache' the first response to the directory 
 
 This is due to Happstack only taking pure functions, so it thinks it does not need to re-calculate the output. This could have been fixed by installing happstack-plugins to tell the server to lead pages dynamically however Cabal broke completely when trying to install the package. 
 
-I have tried to make Happstack refresh the file data automatically when 
-the output page was accessed again using LiftIO, although I could not 
-find a way around the mis-matched types. I also tried using 
-happstack-plugins but several sub-packages could not be installed.
-Sorry for the inconvenience.
-
 To input json via a URL, host it at an accessible location with the
 following format (if you view the output page you will see several samples):
 {"temperatures":[
